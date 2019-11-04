@@ -5,8 +5,8 @@
 <div class="bg-text">
     <div class="col-sm-6 mx-auto">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
-
+            <%= render "shared/devise_messages" %>
+            
             <div class="field form-group">
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control is-valid m-4 col-md-8 mx-auto" %>
             </div>

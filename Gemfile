@@ -68,3 +68,5 @@ gem 'jquery-rails'
 gem 'devise'
 
 gem 'font-awesome-rails'
+
+gem 'toastr-rails'
