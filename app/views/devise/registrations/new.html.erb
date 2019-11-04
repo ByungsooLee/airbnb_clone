@@ -4,8 +4,7 @@
 
 <div class="bg-text">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-
+        <%= render "shared/devise_messages" %>
         <div class="field">
             <%= f.text_field :fullname, placeholder: "Full Name", class: "form-control is-valid m-4 col-md-4 mx-auto" %>
         </div>
