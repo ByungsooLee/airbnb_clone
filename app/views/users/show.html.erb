@@ -5,43 +5,17 @@
                 <%= image_tag avatar_url(@user) %>
                 <div class="card-header text-white">Verification</div>
                 <div class="card-body bg-light p1">
-                    <h5>Facebook<i class="fa fa-check-circle success"></i></h5><br>
-                    <h5>Phone Number<i class="fa fa-check-circle success"></i></h5>
+                    <% if @user.email %>
+                        <h5>Email<i class="fa fa-check-circle success"></i></h5><br>
+                    <% end %>
+                    <% if @user.phone_number %>
+                        <h5>Phone Number<i class="fa fa-check-circle success"></i></h5>
+                    <% end %>
                 </div>
             </div>
         </div>
         <div class="mt-4 col-9">
             <h2>Byungsoo.Lee<h2>
-            <h4 class="mt-4">Listings (2)</h4>
-                <div class="row">
-                    <div class="col-4 mt-4">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="//s3-ap-northeast-1.amazonaws.com/johnedel-airbnb/photos/images/000/000/007/original/R1_3.jpg?1568199507">
-                            <div class="card-body">
-                                <h5 class="card-title"><a href="/rooms/4">Los City</a></h5>
-                                <p class="card-text">$230 - House - 2 beds</p>
-                                <div id="star-ratings_4" title="Not rated yet!"><img alt="1" src="/assets/star-off.png" title="Not rated yet!">&nbsp;<img alt="2" src="/assets/star-off.png" title="Not rated yet!">&nbsp;<img alt="3" src="/assets/star-off.png" title="Not rated yet!">&nbsp;<img alt="4" src="/assets/star-off.png" title="Not rated yet!">&nbsp;<img alt="5" src="/assets/star-off.png" title="Not rated yet!"><input name="score" type="hidden" readonly=""></div>
-                                <div> 0 reviews </div>
-                            </div>
-                        </div>
-                    </div>  
-                    <div class="col-4 mt-4">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="//s3-ap-northeast-1.amazonaws.com/johnedel-airbnb/photos/images/000/000/005/original/R21.jpg?1568197419">
-                            <div class="card-body">
-                                <h5 class="card-title"><a href="/rooms/3">Cebu Suites</a></h5>
-                                <p class="card-text">$150 - House - 2 beds</p>
-                                <div id="star-ratings_3" title="good"><img alt="1" src="/assets/star-on.png" title="good">&nbsp;<img alt="2" src="/assets/star-on.png" title="good">&nbsp;<img alt="3" src="/assets/star-on.png" title="good">&nbsp;<img alt="4" src="/assets/star-on.png" title="good">&nbsp;<img alt="5" src="/assets/star-off.png" title="good"><input name="score" type="hidden" value="4" readonly=""></div>
-                                <div> 2 reviews </div>
-                            </div>
-                        </div>
-                    </div>  
-                    <div>
-                        <ul class="list-group list-group-flush">
-                            <h4 class="list-group-item"></h4>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                        </ul>
-                    </div>
         </div>
     </div>
 </div>
