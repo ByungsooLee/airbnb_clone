@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="mt-4 col-3">
+            <div class="card bg-info mb-3" style="max-width: 18rem;">
+                <%= image_tag avatar_url(@user) %>
+                <div class="card-header text-white">Verification</div>
+                <div class="card-body bg-light p1">
+                    <% if @user.email %>
+                        <h5>Email<i class="fa fa-check-circle success"></i></h5><br>
+                    <% end %>
+                    <% if @user.phone_number %>
+                        <h5>Phone Number<i class="fa fa-check-circle success"></i></h5>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 col-9">
+            <h2>Byungsoo.Lee<h2>
+        </div>
+    </div>
+</div>
+    

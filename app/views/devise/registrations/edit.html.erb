@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-header text-white bg-success">Edit Profile</div>
                 <div class="card-body">
-                    <a class="btn btn-secondary" href="#">View My Profile</a>
+                    <%= link_to "View My Profile", user_path(current_user), class: "btn btn-secondary" %>
                 </div>
             </div>
         </div>
