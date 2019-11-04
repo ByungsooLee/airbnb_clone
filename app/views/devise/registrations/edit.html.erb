@@ -1,43 +1,57 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container"> 
+    <div class="row">
+        <div class="mt-4 col-3 text-center">
+            <div class="card">
+                <div class="card-header text-white bg-success">Edit Profile</div>
+                <div class="card-body">
+                    <a class="btn btn-secondary" href="#">View My Profile</a>
+                </div>
+            </div>
+        </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="mt-4 col-9 text-center">
+            <div class="card">
+                <div class="card-header text-center  text-white bg-success">Your Profile</div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                            <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                            <div class="field">
+                                <%= f.text_field :fullname, placeholder: "Full Name", class: "form-control is-valid col-md-11 mx-auto" %>
+                            </div>
+
+                            <div class="field">
+                                <%= f.text_field :phone_number, autofocus: true, placeholder: "Phone Number", class: "form-control is-valid m-4 col-md-11 mx-auto" %>
+                            </div>
+
+                            <div class="field">
+                                <%= f.text_area :description, autofocus: true, placeholder: "Description", class: "form-control is-valid  m-4 col-md-11 mx-auto", id: "validationTextarea" %>
+
+                                <%# <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> %>
+                            </div>
+
+                            <div class="field">
+                                <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control is-valid m-4 col-md-11 mx-auto" %>
+                            </div>
+
+                            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                            <% end %>
+
+                            <div class="field">
+                                <%= f.password_field :password, placeholder: "New Password(leave blank if you don't want to change it)", class: "form-control is-valid m-4 col-md-11 mx-auto" %>
+                                <% if @minimum_password_length %>
+                                <% end %>
+                            </div>
+
+                            <div class="actions">
+                                <%= f.submit "Update", class: "btn-danger col-md-11 mx-auto" %>
+                            </div>
+                        <% end %>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-
-    <div class="field">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-        <% if @minimum_password_length %>
-            <br/>
-            <em><%= @minimum_password_length %> characters minimum</em>
-        <% end %>
-    </div>
-
-    <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-
-    <div class="field">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field :current_password, autocomplete: "current-password" %>
-    </div>
-
-    <div class="actions">
-        <%= f.submit "Update" %>
-    </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
