@@ -70,3 +70,7 @@ gem 'devise'
 gem 'font-awesome-rails'
 
 gem 'toastr-rails'
+
+gem 'omniauth'
+
+gem 'omniauth-facebook'
