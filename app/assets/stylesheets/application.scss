@@ -5,3 +5,44 @@
 .avatar-sm {
   width: 40px;
 }
+
+// FORMS
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-control {
+  border-radius: 2px;
+  height: 4rem;
+}
+
+.form-group input {
+  height: 45px;
+  border: 1px solid #00A699;
+}
+
+.form-group textarea {
+  border: 1px solid #00A699;
+}
+
+.form-group select {
+  width: 100%;
+  color: #565a5c;
+  background-color: white;
+  border: 1px solid #00A699;
+  border-radius: 2px;
+  padding: 10px;
+  appearance: none;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari & Chrome */
+}
+
+.select:before {
+  content: '\25bc';
+  font-size: 1.5em;
+  position: absolute;
+  color: #00A699;
+  top: 38px;
+  right: 30px;
+  transform: scale(0.94, 0.62);
+}
