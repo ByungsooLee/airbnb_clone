@@ -9,7 +9,7 @@
         <div class="navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li>
-                    <button class="btn btn-outline-success my-2 m-2 my-sm-0" type="submit">Become a host</button>
+                    <%= link_to "Become a host", new_room_path, class: "btn btn-outline-success" %>
                 </li>
                 <li class="nav-item">
                     <%= image_tag avatar_url(current_user), class: "rounded-circle avatar-sm" %>
