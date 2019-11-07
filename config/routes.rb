@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :rooms do
     member do
-      get :listing,'new_page'
+      get :listing
     end
   end
   devise_for :users,
