@@ -15,6 +15,7 @@ class RoomsController < ApplicationController
   end
 
   def listing
+    @room = Room.find(params[:id])
   end
 
   private
