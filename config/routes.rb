@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  resources :rooms
+  resources :rooms do
+    member do
+      get :listing,'new_page'
+    end
+  end
   devise_for :users,
               path:"",
               controllers:{ registrations: 'registrations', omniauth_callbacks: 'omniauth_callbacks' }
