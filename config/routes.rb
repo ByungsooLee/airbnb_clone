@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   resources :rooms do
     member do
       get :listing
+      get :pricing
+      get :description
+      get :photos
+      get :amenities
+      get :location
     end
   end
   devise_for :users,

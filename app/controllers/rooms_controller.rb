@@ -18,6 +18,26 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
   end
 
+  def pricing
+    @room = Room.find(params[:id])
+  end
+
+  def description
+    @room = Room.find(params[:id])
+  end
+
+  def photos
+    @room = Room.find(params[:id])
+  end
+
+  def amenities
+    @room = Room.find(params[:id])
+  end
+
+  def location
+    @room = Room.find(params[:id])
+  end
+
   private
   def room_params
     params.require(:room).permit(:name, :price, :description, :location, :has_heating, :has_tv, :has_kichen, :has_internet, :has_aircon, :home_type, :room_type, :guest_count, :bedroom_count, :bathroom_count, :is_active)
