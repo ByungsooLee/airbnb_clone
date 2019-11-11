@@ -1,9 +1,9 @@
  <div class="container">
     <div class="row">
         <%= render "layouts/sidebar" %> 
-        <div class="mt-4 col-9 text-center">
+        <div class="mt-4 col-9">
             <div class="card">
-                <div class="card-header text-center text-white bg-success">Listing</div>
+                <div class="card-header text-white bg-success">Listing</div>
                 <div class="card-body">
                     <div class="container">
                         <%= form_for @room do |f| %>
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div><%= f.submit "Create My Room", class: "btn btn-success" %></div>
+                            <div><%= f.submit "Save", class: "btn btn-success" %></div>
                         <% end %>
                     </div>
                 </div>

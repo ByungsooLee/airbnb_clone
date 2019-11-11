@@ -1,0 +1,25 @@
+ <div class="container">
+    <div class="row">
+        <%= render "layouts/sidebar" %> 
+        <div class="mt-4 col-9">
+            <div class="card">
+                <div class="card-header text-white bg-success">Description</div>
+                <div class="card-body">
+                    <div class="container">
+                         <%= form_for @room do |f| %>
+                            <div class="form-group">
+                                <label>Listing name</label>
+                                <%= f.text_field :description, placeholder: "What is your listing name", class: "form-control", required: "true" %>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Summary</label>
+                                <%= f.text_area :description, class: "form-control", placeholder: "Summary of your house",rows: "3" , required: "true" %>
+                            </div>
+                            <div><%= f.submit "Save", class: "btn btn-success" %></div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

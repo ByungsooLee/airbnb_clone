@@ -1,0 +1,2 @@
+class AddCreateRoom < ApplicationRecord
+end

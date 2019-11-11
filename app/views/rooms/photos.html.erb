@@ -1,0 +1,24 @@
+ <div class="container">
+    <div class="row">
+        <%= render "layouts/sidebar" %> 
+        <div class="mt-4 col-9">
+            <div class="card">
+                <div class="card-header text-white bg-success">Photos</div>
+                <div class="card-body">
+                    <div class="container mx-auto">
+                        <div class="mx-auto">
+                            <%= form_for @room do |f| %>
+                                <div class="form-group">
+                                    <%= f.file_field :"#", placeholder: "eg: $100", class: "form-control col-4 mx-auto" %>
+                                </div>
+                                <div class="mx-auto" style="width: 115px;">
+                                    <%= f.submit "Add Photo", class: "btn btn-primary", type: "submit" %>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
