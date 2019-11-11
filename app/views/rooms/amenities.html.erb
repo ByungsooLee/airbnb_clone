@@ -9,31 +9,27 @@
                         <%= form_for @room do |f| %>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="form-group">
-                                        <%= f.check_box :has_tv, class: "custom-control-input" %>
-                                        <label class="custom-control-label">TV</label>
-                                    </div>
+                                    <%= f.check_box :has_tv %>
+                                    <label>TV</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group">
-                                        <%= f.check_box :has_kichen, class: "custom-control-input" %>
-                                        <label class="custom-control-label">Kichen</label>
-                                    </div>
+                                    <%= f.check_box :has_kichen %>
+                                    <label>Kichen</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group">
-                                        <%= f.check_box :has_internet, class: "custom-control-input" %>
-                                        <label class="custom-control-label">Internet</label>
-                                    </div>
+                                    <%= f.check_box :has_internet %>
+                                    <label>Internet</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group">
-                                        <%= f.check_box :has_aircon, class: "custom-control-input" %>
-                                        <label class="custom-control-label">Air Conditioning</label>
-                                    </div>
+                                    <%= f.check_box :has_heating %>
+                                    <label>Heating</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <%= f.check_box :has_aircon %>
+                                    <label>Air Conditioning</label>
                                 </div>
                             </div>
-                            <div><%= f.submit "Save", class: "btn btn-success" %></div>
+                            <div class="text-center"><%= f.submit "Save", class: "btn btn-success" %></div>
                         <% end %>
                     </div>
                 </div>
