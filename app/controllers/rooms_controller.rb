@@ -1,4 +1,8 @@
 class RoomsController < ApplicationController
+
+  before_action :room_find, only: [:listing, :pricing, :description, :photos, :amenities, :location]
+
+
   def new
     @room = current_user.rooms.build
   end
@@ -10,36 +14,35 @@ class RoomsController < ApplicationController
       redirect_to listing_room_path(@room), notice: "Saved..."
     else
       flash[:alert] = "Something went wrong..."
-      render :new
+      render "new"
     end
   end
 
   def listing
-    @room = Room.find(params[:id])
   end
 
   def pricing
-    @room = Room.find(params[:id])
   end
 
   def description
-    @room = Room.find(params[:id])
   end
 
   def photos
-    @room = Room.find(params[:id])
   end
 
   def amenities
-    @room = Room.find(params[:id])
   end
 
   def location
-    @room = Room.find(params[:id])
   end
 
   private
-  def room_params
-    params.require(:room).permit(:name, :price, :description, :location, :has_heating, :has_tv, :has_kichen, :has_internet, :has_aircon, :home_type, :room_type, :guest_count, :bedroom_count, :bathroom_count, :is_active)
+  def room_find
+    @room = Room.find(params[:id])
   end
+
+  def room_params
+    params.require(:room).permit(:name, :price, :description, :summary, :location, :picture, :has_heating, :has_tv, :has_kichen, :has_internet, :has_aircon, :home_type, :room_type, :guest_count, :bedroom_count, :bathroom_count, :is_active)
+  end
+
 end

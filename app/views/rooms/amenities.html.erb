@@ -6,41 +6,35 @@
                 <div class="card-header text-white bg-success">Amenities</div>
                 <div class="card-body">
                     <div class="container">
-                        <form>
+                        <%= form_for @room do |f| %>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="checkbox" class="custom-control-input">
+                                        <%= f.check_box :has_tv, class: "custom-control-input" %>
                                         <label class="custom-control-label">TV</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="checkbox" class="custom-control-input">
-                                        <label class="custom-control-label">Kitchen</label>
+                                        <%= f.check_box :has_kichen, class: "custom-control-input" %>
+                                        <label class="custom-control-label">Kichen</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="checkbox" class="custom-control-input">
+                                        <%= f.check_box :has_internet, class: "custom-control-input" %>
                                         <label class="custom-control-label">Internet</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="checkbox" class="custom-control-input">
-                                        <label class="custom-control-label">Shampoo</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="checkbox" class="custom-control-input">
+                                        <%= f.check_box :has_aircon, class: "custom-control-input" %>
                                         <label class="custom-control-label">Air Conditioning</label>
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </form>
+                            <div><%= f.submit "Save", class: "btn btn-success" %></div>
+                        <% end %>
                     </div>
                 </div>
             </div>

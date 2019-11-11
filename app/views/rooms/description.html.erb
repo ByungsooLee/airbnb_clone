@@ -6,17 +6,17 @@
                 <div class="card-header text-white bg-success">Description</div>
                 <div class="card-body">
                     <div class="container">
-                        <form>
+                         <%= form_for @room do |f| %>
                             <div class="form-group">
                                 <label>Listing name</label>
-                                <input type="text" class="form-control" id="price" placeholder="What is your listing name">
+                                <%= f.text_field :description, placeholder: "What is your listing name", class: "form-control", required: "true" %>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Summary</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Summry of your house"></textarea>
+                                <%= f.text_area :description, class: "form-control", placeholder: "Summary of your house",rows: "3" , required: "true" %>
                             </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </form>
+                            <div><%= f.submit "Save", class: "btn btn-success" %></div>
+                        <% end %>
                     </div>
                 </div>
             </div>
