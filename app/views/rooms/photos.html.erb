@@ -5,17 +5,17 @@
             <div class="card">
                 <div class="card-header text-white bg-success">Photos</div>
                 <div class="card-body">
-                    <div class="container">
-                        <form class="mx-auto">
-                            <div class="form-group">
-                                <div class="form-group col-4 mx-auto">
-                                    <input class="form-control text-center" placeholder="Select photos">
+                    <div class="container mx-auto">
+                        <div class="mx-auto">
+                            <%= form_for @room do |f| %>
+                                <div class="form-group">
+                                    <%= f.file_field :"#", placeholder: "eg: $100", class: "form-control col-4 mx-auto" %>
                                 </div>
-                            </div>
-                            <div class="mx-auto" style="width: 115px;">
-                                <button type="submit" class="btn btn-primary">Add photos</button>
-                            </div>
-                        </form>
+                                <div class="mx-auto" style="width: 115px;">
+                                    <%= f.submit "Add Photo", class: "btn btn-primary", type: "submit" %>
+                                </div>
+                            <% end %>
+                        </div>
                     </div>
                 </div>
             </div>
