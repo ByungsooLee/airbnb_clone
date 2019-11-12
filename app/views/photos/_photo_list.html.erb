@@ -1,0 +1,11 @@
+<div class="card row">
+    <div class="card-deck">
+        <% if @photos %>
+            <% @photos.each do |photo| %>
+                <div class="card-body col-4">
+                    <%= image_tag photo.image.url, class: "card-img-top" %>
+                </div>  
+            <% end %>
+        <% end %>
+    </div>
+</div>

@@ -39,6 +39,7 @@ class RoomsController < ApplicationController
   end
 
   def photos
+    @photos = @room.photos
   end
 
   def amenities
@@ -48,6 +49,7 @@ class RoomsController < ApplicationController
   end
 
   private
+
   def room_find
     @room = Room.find(params[:id])
   end
