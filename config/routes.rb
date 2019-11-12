@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'photos/create'
   root 'pages#home'
   resources :rooms do
     member do
