@@ -76,3 +76,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem 'paperclip'
+
+gem 'aws-sdk'
