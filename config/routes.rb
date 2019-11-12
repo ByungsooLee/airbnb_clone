@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'photos/create'
   root 'pages#home'
   resources :rooms do
     member do
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
       get :amenities
       get :location
     end
+    resources :photos, only: [:create, :destroy]
   end
   devise_for :users,
               path:"",
