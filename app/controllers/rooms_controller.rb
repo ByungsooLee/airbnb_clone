@@ -20,7 +20,10 @@ class RoomsController < ApplicationController
 
   def update
     @room = Room.find(params[:id])
-    if @room.update(room_params)
+
+    final_params = (is_ready?(@room) ? room_params.merge(is_active: true) : room_params)
+
+    if @room.update(final_params)
       flash[:notice] = 'Saved'
       redirect_back(fallback_location: request.referer)
     else

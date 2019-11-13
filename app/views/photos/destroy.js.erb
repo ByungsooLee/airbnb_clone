@@ -1,1 +1,10 @@
 $("#photos-container").html("<%= j render 'photo_list' %>");
+<% if @room.photos.blank? %>
+    $("#photo-check").hide();
+<% end %>
+
+<% if is_ready?(@room) %>
+    $("#btn-publish").attr('disabled', false);
+<% else %>
+    $("#btn-publish").attr('disabled', true);
+<% end %>

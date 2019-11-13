@@ -1,17 +1,20 @@
 <div class="mt-4 col-3">
     <div class="card">
         <div class="card-header">
-            <ul class="list-group p-2 m-1">
-                <%= link_to "Listing", listing_room_path(@room) %>
-                <%= link_to "Pricing", pricing_room_path(@room) %>
-                <%= link_to "Description", description_room_path(@room) %>
-                <%= link_to "Photos", photos_room_path(@room) %>
-                <%= link_to "Amenities", amenities_room_path(@room) %>
-                <%= link_to "Location", location_room_path(@room) %>
-            </ul>
+            <div class="list-group p-2 m-1">
+                <p><%= link_to "Listing", listing_room_path(@room) %><span class="pull-right"><i class="fa fa-check"></i></span></p>
+                <p><%= link_to "Pricing", pricing_room_path(@room) %><span class="pull-right"><%= is_done?(@room.price) %></span></p>
+                <p><%= link_to "Description", description_room_path(@room) %><span class="pull-right"><%= is_done?(@room.description) %></span></p>
+                <p><%= link_to "Photos", photos_room_path(@room) %><span id="photo-check" class="pull-right"><%= is_done?(@room.photos) %></span></P>
+                <p><%= link_to "Amenities", amenities_room_path(@room) %><span class="pull-right"><i class="fa fa-check"></i></span></p>
+                <p><%= link_to "Location", location_room_path(@room) %><span class="pull-right"><%= is_done?(@room.location) %></span></p>
+            </div>
             <div class="border"></div>
             <div class="card-body">
-                <%= link_to "Publish", "#", class: "btn btn-success" %>
+                <%= form_for @room, class: "btn btn-success" do |f|%>
+                    <%= f.hidden_field :is_active, value: true %>
+                    <%= f.submit "Publish", id: "btn-publish", class: "btn btn-success", disabled: !is_ready?(@room) %>
+                <% end %>
             </div>
         </div>
     </div>
