@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <%= render "rooms/sidebar" %>
+        <div class="mt-4 col-9">
+            <div class="card">
+                <div class="card-header text-white bg-success">Listing</div>
+                <div class="card-body">
+                    <div class="row">
+                        <% @rooms.each do |room| %>
+                                <% if room.photos.first %>
+                                    <%= image_tag room.photos.first.image.url,class: "col-md-2 rounded-pill p-3" %>
+                                <% end %>
+                            <div class="col-md-7 text-center">
+                                <h4><%= room.name %></h4>
+                            </div>
+                            <div class="col-md-3 right">
+                                <%= link_to "Update", listing_room_path(room), class: "btn btn-success" %>
+                            </div>
+                            <hr/>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

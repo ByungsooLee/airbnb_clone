@@ -2,6 +2,9 @@ class RoomsController < ApplicationController
 
   before_action :room_find, only: [:listing, :pricing, :description, :photos, :amenities, :location]
 
+  def index
+    @rooms = current_user.rooms
+  end
 
   def new
     @room = current_user.rooms.build
