@@ -46,3 +46,9 @@
   right: 30px;
   transform: scale(0.94, 0.62);
 }
+
+.thumb {
+  width:100px;
+  height:100px;
+  object-fit:cover;
+}
