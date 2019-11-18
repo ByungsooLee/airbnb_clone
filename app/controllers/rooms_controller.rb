@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
 
-  before_action :room_find, only: [:listing, :pricing, :description, :photos, :amenities, :location]
+  before_action :room_find, only: [:listing, :pricing, :description, :photos, :amenities, :location, :show]
 
   def index
     @rooms = current_user.rooms
@@ -33,6 +33,9 @@ class RoomsController < ApplicationController
       flash[:alert] = "Something went wrong..."
       render "new"
     end
+  end
+
+  def show
   end
 
   def listing
