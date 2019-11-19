@@ -78,3 +78,5 @@ gem 'omniauth-facebook'
 gem 'paperclip'
 
 gem 'aws-sdk'
+
+gem 'geocoder'
