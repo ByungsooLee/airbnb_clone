@@ -10,7 +10,7 @@
             <%= image_tag avatar_url(@room.user), class: "rounded-circle avatar-large", style: "height: 150px;" %><br/><br/>
             <%= @room.user.fullname %> 
         </div>
-        <div class="col-12"> <hr/></div>
+        <div class="col-12"><hr/></div>
 
         <div class="col-12">
             <div class="text-babu text-center row-space-1">
@@ -43,7 +43,7 @@
             <h3>About This Listing</h3>
             <p><%= @room.description %></p>
         </div>
-        <div class="col-12"> <hr/></div>
+        <div class="col-12"><hr/></div>
 
         <div class="col-12 row">
             <div class="col-4">
@@ -63,42 +63,62 @@
             </div>
         </div>
 
-        <div class="row col-12">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%; height: 400px">
-                <ol class="carousel-indicators">
-                    <% @room.photos.each do |photo| %>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="<%= photo.id %>"></li>
-                    <% end %>
-                </ol>
-                <div class="carousel-inner">
-                    <% @room.photos.each do |photo| %>
-                        <div class="carousel-item <%= 'active' if photo.id == @room.photos[0].id %>">
-                            <%= image_tag photo.image.url, class: "d-block w-100" %>
-                        </div>
-                    <% end %>
+        <div class="row">
+            <div class="col-12">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style= "width: 100%; height: 400px;">
+                    <ol class="carousel-indicators">
+                        <% @room.photos.each do |photo| %>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="<%= photo.id %>"></li>
+                        <% end %>
+                    </ol>
+                    <div class="carousel-inner" style="width: 100%; height: 400px;">
+                        <% @room.photos.each do |photo| %>
+                            <div class="carousel-item <%= 'active' if photo.id == @room.photos[0].id %>">
+                                <%= image_tag photo.image.url, class: "d-block w-100" %>
+                            </div>
+                        <% end %>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
         <div class="col-12"><hr/></div>
 
-        <div class="row col-12">
-            <%= image_tag ("noimg.png"), alt: "", style: "width: 100%; height: 400px" %>
+        <div class="">
+            <div id="map"></div>
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBR3PdcVF1UUq53eiykXQecvkqki3oy_0"></script>
+                <script>
+                    function initialize() {
+                        var location = {lat: Number("<%= @room.latitude %>"), lng: Number("<%= @room.longitude %>") };
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            center: location,
+                            zoom: 5
+                        });
+                        var marker = new google.maps.Marker({
+                            position: location,
+                            map: map
+                        });
+                        var infoWindow = new google.maps.InfoWindow({
+                            content: '<div id="content"><%= image_tag @room.photos.first.image.url %></div>'
+                        });
+                        infoWindow.open(map, marker);
+                    }
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                </script>
         </div>
-        <div class="col-12"> <hr/></div>
+        <div class="col-12"><hr/></div>
 
         <div class="row col-12">
             <h3>Near by</h3>
         </div>
     </div>
-
 
     <div class="col-4">
         <div class="card text-white bg-success" style="max-height: 15rem;">
