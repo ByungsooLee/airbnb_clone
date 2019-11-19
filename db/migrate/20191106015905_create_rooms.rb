@@ -5,7 +5,7 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :price
       t.text :description
-      t.string :location
+      t.string :address
       t.boolean :has_heating
       t.boolean :has_tv
       t.boolean :has_kichen

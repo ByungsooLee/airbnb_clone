@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_040807) do
     t.string "name"
     t.string "price"
     t.text "description"
-    t.string "location"
+    t.string "address"
     t.boolean "has_heating"
     t.boolean "has_tv"
     t.boolean "has_kichen"

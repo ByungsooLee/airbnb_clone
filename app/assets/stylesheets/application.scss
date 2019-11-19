@@ -58,8 +58,9 @@
 }
 
 .map-image{
-  height :100px;
-  width :150px;
+  width :730px; 
+  height: 400px;
+  position: relative;
 }
 
 #map{
@@ -68,7 +69,3 @@
   position: relative;
 }
 
-#content{
-  height :100px;
-  width :150px;
-}

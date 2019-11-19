@@ -6,6 +6,6 @@ module RoomsHelper
   end
 
   def is_ready?(room)
-    !room.price.blank? && !room.description.blank? && !room.photos.blank? && !room.location.blank?
+    !room.price.blank? && !room.description.blank? && !room.photos.blank? && !room.address.blank?
   end
 end
