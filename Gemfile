@@ -80,3 +80,5 @@ gem 'paperclip'
 gem 'aws-sdk'
 
 gem 'geocoder'
+
+gem 'jquery-ui-rails', '~>5.0'

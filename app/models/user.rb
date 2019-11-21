@@ -3,8 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable andP :omniauthable
   has_many :rooms
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :omniauthable
+  :recoverable, :rememberable, :validatable,
+  :confirmable, :omniauthable
+  
+  has_many :reservations
 
   validates :fullname, presence: true, length: { maximum: 50 }
 

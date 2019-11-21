@@ -1,4 +1,5 @@
 class Room < ApplicationRecord
+  has_many :reservations
   belongs_to :user
   has_many :photos
   geocoded_by :address
