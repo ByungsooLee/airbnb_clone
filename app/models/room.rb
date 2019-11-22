@@ -1,4 +1,10 @@
 class Room < ApplicationRecord
+  has_many :guest_reviews
+
+  def average_rating
+    guest_reviews.count == 0 ? 0 : guest_reviews.average(:star).round(2).to_i
+  end
+  
   has_many :reservations
   belongs_to :user
   has_many :photos
