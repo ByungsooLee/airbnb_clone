@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <%= render "rooms/sidebar" %>
+        <div class="mt-4 col-9">
+            <div class="card">
+                <div class="card-header text-white bg-success">Your Reservations</div>
+                <div class="card-body">
+                    <div class="row">
+                            <% @rooms.each do |room| %>
+                                <% room.reservations.each do |reservation| %>
+                                <div class="col-md-2"><%= reservation.start_date.strftime('%v') %></div>
+                                
+                                <% if reservation.room.photos.first %>
+                                    <%= image_tag reservation.room.photos.first.image.url, class: "col-md-2 thumb-trip" %>
+                                <% else %>
+                                    <%= image_tag ("noimg.png"), alt: "", class: "col-md-2 thumb-trip" %>
+                                <% end %>
+                                <div class="col-md-4 text-centerpull-left">
+                                    <a><%= link_to reservation.room.name, room_path(reservation.room), class: "text-dark" %></a>
+                                    <span class="d-block">
+                                        <%= link_to reservation_path(reservation.user) do %>
+                                            <%= image_tag avatar_url(reservation.user), class: "rounded-circle avatar-sm" %>
+                                            <%= link_to reservation.user.fullname %>
+                                        <% end %>
+                                    </span>
+                                    <br>
+                                </div>
+                                <div class="col-md-4 pull-right">
+                                    <%= link_to "Review Guest", "#", class: "btn btn-success" %>
+                                </div>
+                                <hr/>
+                                <% end %>
+                            <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
