@@ -18,7 +18,7 @@
                                 <div class="col-md-4 text-centerpull-left">
                                     <a><%= link_to reservation.room.name, room_path(reservation.room), class: "text-dark" %></a>
                                     <span class="d-block">
-                                        <%= link_to user_path(reservation.room.user) do %>
+                                        <%= link_to reservation_path(reservation.user) do %>
                                             <%= image_tag avatar_url(reservation.user), class: "rounded-circle avatar-sm" %>
                                             <%= link_to reservation.user.fullname %>
                                         <% end %>
