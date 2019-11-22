@@ -8,7 +8,6 @@
                     <div class="row">
                             <% @reservations.each do |reservation| %>
                                 <div class="col-md-2"><%= reservation.start_date.strftime('%v') %></div>
-                                
                                 <% if reservation.room.photos.first %>
                                     <%= image_tag reservation.room.photos.first.image.url, class: "col-md-2 thumb-trip" %>
                                 <% else %>
@@ -24,8 +23,8 @@
                                     </span>
                                     <br>
                                 </div>
-                                <div class="col-md-4 pull-right">
-                                    <%= link_to "Review Host", listing_room_path(reservation.room), class: "btn btn-success" %>
+                                <div class="col-4 mb-2 pull-right">
+                                    <%= render partial: "reviews/guest_form", locals: {reservation: reservation} %>
                                 </div>
                                 <hr/>
                             <% end %>
